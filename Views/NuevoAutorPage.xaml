@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="Agregar Autor"
+             x:Class="BibliotecaUTH.Views.NuevoAutorPage">
+    <ContentPage.Content>
+        <StackLayout Padding="10" Spacing="20">
+            <Label Text="Biblioteca UTH" 
+                   FontSize="24" 
+                   HorizontalOptions="Center" 
+                   TextColor="Black" />
+
+            <Label Text="Foto del autor" 
+                   FontSize="18" 
+                   HorizontalOptions="Center" 
+                   TextColor="Black" />
+
+            <Frame BorderColor="Gold"  
+                   HeightRequest="120" 
+                   WidthRequest="120" 
+                   HorizontalOptions="Center" 
+                   VerticalOptions="Center">
+                <Image x:Name="imagen" 
+                       Source="smiley.png" 
+                       HorizontalOptions="Center" 
+                       HeightRequest="100" 
+                       WidthRequest="100" 
+                       BackgroundColor="White" 
+                       Aspect="AspectFill">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnImageTapped" />
+                    </Image.GestureRecognizers>
+                </Image>
+            </Frame>
+
+            <Entry x:Name="nombreEntry" 
+                   Placeholder="Nombre del autor" 
+                   HorizontalOptions="Center"
+                   WidthRequest="370" 
+                   Margin="0,20,0,0"/>
+
+            <Picker x:Name="nacionalidadPicker" 
+                    BackgroundColor="White" 
+                    TextColor="Black"  
+                    WidthRequest="370" 
+                    Title="Seleccione País"
+                    HorizontalOptions="Center"
+                    Margin="0,20,0,0">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Honduras</x:String>
+                        <x:String>Costa Rica</x:String>
+                        <x:String>Guatemala</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+            <Button Text="Agregar" 
+                    Clicked="OnSaveButtonClicked" 
+                    Background="Green" 
+                    HorizontalOptions="Center"
+                    WidthRequest="370"
+                    Margin="0,20,0,0"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
